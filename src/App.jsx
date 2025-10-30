@@ -1,33 +1,44 @@
-import React, { useEffect, useState } from "react";
+
+import {  Router, Routes, Route } from "react-router-dom";
 import Herosection from "./Pages/Herosection";
-import Restaurantssection from "./Pages/Restaurantssection";
+import Product from "./Pages/Productsection";
+import Detailpage from "./Pages/Detailpage";
+import Navbar from "./Component/Navbar";
+import Footer from "./Component/Footer";
+import Showcart from "./Component/Showcart";
 
 function App() {
-  const [restaurants, setRestaurants] = useState([]);
-
-  useEffect(() => {
-    // API call
-    async function fetchRestaurants() {
-      const res = await fetch("https://dummyjson.com/products");
-      const data = await res.json();
-      setRestaurants(data.products); 
-    }
-
-    fetchRestaurants();
-  }, []);
-
+ 
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
-      {/* 🌟 Navbar */}
     
 
-      {/* 🍕 Hero Section */}
-      <Herosection />
-      {/* 🏪 Restaurants Section */}
-      <Restaurantssection/>
+    
+      <div className="bg-gray-50 min-h-screen text-gray-800">
+        {/* Navbar */}
+        <Navbar />
 
-      {/* 🧁 Footer */}
-      
+        {/* Routes */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Herosection />
+                <Product />
+              </>
+            }
+          />
+          <Route path="/product/:id" element={<Detailpage />} />
+          <Route path="/showcart" element={<Showcart />} />
+        </Routes>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+   
+
+
     </div>
   );
 }
