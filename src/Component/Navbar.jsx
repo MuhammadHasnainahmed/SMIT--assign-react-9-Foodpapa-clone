@@ -5,27 +5,25 @@ import { Link } from "react-router";
 
 function Navbar() {
   return (
-    <header className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
+    <header className="bg-[#1E40AF] text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-2xl font-bold text-blue-400">ASSC Tech</h1>
+        <h1 className="text-2xl font-bold text-[#FACC15]">ASSC Tech</h1>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-gray-300">
-          <Link to="/"  className="flex items-center gap-2 hover:text-blue-400 transition">
+        <nav className="hidden md:flex items-center gap-8 text-gray-100">
+          <Link to="/" className="flex items-center gap-2 hover:text-[#FACC15] transition">
             <FaHome /> Home
           </Link>
-          <Link to="/" className="flex items-center gap-2 hover:text-blue-400 transition">
+          <Link to="/" className="flex items-center gap-2 hover:text-[#FACC15] transition">
             <FaLaptop /> Products
           </Link>
-          <a href="#" className="flex items-center gap-2 hover:text-blue-400 transition">
+          <a href="#" className="flex items-center gap-2 hover:text-[#FACC15] transition">
             <FaTags /> Offers
           </a>
         </nav>
 
-        {/* Cart + Login */}
         <div className="flex items-center gap-4">
           <Addtocart />
-          <button className="bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-semibold">
+          <button className="bg-[#FACC15] hover:bg-yellow-400 text-[#111827] px-5 py-2 rounded-lg font-semibold">
             Login
           </button>
         </div>

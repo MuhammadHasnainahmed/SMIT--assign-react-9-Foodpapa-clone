@@ -14,7 +14,7 @@ function App() {
     
 
     
-      <div className="bg-gray-50 min-h-screen text-gray-800">
+      <div className="bg-gray-50 flex flex-col min-h-screen text-gray-800">
         {/* Navbar */}
         <Navbar />
 

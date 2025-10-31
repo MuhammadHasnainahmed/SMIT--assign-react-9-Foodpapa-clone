@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // ✅ correct import
+import { Link } from "react-router-dom";
 import Addcartbutton from "../Component/Addcartbutton";
 
 function ProductSection() {
@@ -10,13 +10,11 @@ function ProductSection() {
     fetchProducts();
   }, []);
 
-  function productdetail(item) {
-    localStorage.setItem("productdetail", JSON.stringify(item));
-  }
-
   async function fetchProducts() {
     try {
-      const response = await fetch("https://fakestoreapi.com/products?limit=10");
+      const response = await fetch(
+        "https://fakestoreapi.com/products?limit=10"
+      );
       const data = await response.json();
       setProducts(data);
       setLoading(false);
@@ -28,27 +26,28 @@ function ProductSection() {
 
   if (loading) {
     return (
-      <div className="py-20 text-center text-gray-600 text-lg font-medium">
+      <div className="py-20 text-center text-[#1E40AF] text-lg font-medium">
         Loading products...
       </div>
     );
   }
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-10">Top Deals</h2>
+        <h2 className="text-3xl font-bold text-[#1E40AF] mb-10">Top Deals</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4 flex flex-col justify-between"
+              className="bg-white  shadow-md hover:shadow-lg transition p-4 flex flex-col justify-between border-t-4 border-[#FACC15]"
             >
-             
               <Link
                 to={`/product/${item.id}`}
-                onClick={() => productdetail(item)}
+                onClick={() =>
+                  localStorage.setItem("productdetail", JSON.stringify(item))
+                }
                 className="block"
               >
                 <img
@@ -61,7 +60,8 @@ function ProductSection() {
                 </h3>
               </Link>
 
-              <p className="text-blue-600 font-bold mt-1">${item.price}</p>
+              <p className="text-[#1E40AF] font-bold mt-1">${item.price}</p>
+
               <Addcartbutton product={item} />
             </div>
           ))}
