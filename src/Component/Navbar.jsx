@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHome, FaLaptop, FaTags } from "react-icons/fa";
-import Addtocart from "./addtocart";
+import Addtocart from "./Addtocart.jsx";
 import { Link } from "react-router";
 
 function Navbar() {
