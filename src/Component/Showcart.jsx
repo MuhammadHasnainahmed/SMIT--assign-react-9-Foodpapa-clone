@@ -46,7 +46,7 @@ function Showcart() {
                     Remove
                   </button>
                   <span className="text-gray-700 font-semibold">
-                    Qty: <span className="text-gray-900">1</span>
+                    Qty: <span className="text-gray-900">{item.quantity}</span>
                   </span>
                 </div>
               </div>
@@ -69,7 +69,7 @@ function Showcart() {
             <span>
               $
               {cart
-                .reduce((total, item) => total + item.price, 0)
+                .reduce((total, item , quantity) => total + item.price, 0)
                 .toFixed(2)}
             </span>
           </div>

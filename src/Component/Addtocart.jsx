@@ -7,7 +7,7 @@ import Showcart from './Showcart.jsx';
 function Addtocart() {
     const {cart} = useContext(CartContext)
 
-    console.log("cart", cart);
+  
     
     return (
     <>

@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <header className="bg-[#1E40AF] text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-2xl font-bold text-[#FACC15]">ASSC Tech</h1>
+        <h1 className="text-2xl font-bold text-[#FACC15]">H-A-A Tech</h1>
 
         <nav className="hidden md:flex items-center gap-8 text-gray-100">
           <Link to="/" className="flex items-center gap-2 hover:text-[#FACC15] transition">
